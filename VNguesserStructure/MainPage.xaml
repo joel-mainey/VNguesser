@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="VNguesserStructure.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VNguesserStructure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  SizeChanged="Page_SizeChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        
+    <!-- Background -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Game_Background.png" 
+                        Stretch="UniformToFill" 
+                        Opacity="0.7"/>
+        </Grid.Background>
+
+        <!-- Title -->
+        <TextBlock Text="VNguesser" 
+                   FontFamily="Consolas" 
+                   FontSize="48" 
+                   FontWeight="Bold" 
+                   Grid.Column="0" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="7"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="237" 
+                   Height="56"/>
+
+        <!-- Username, Password -->
+        <TextBlock Text="Username" 
+                   FontWeight="Bold" 
+                   FontSize="16"
+                   Grid.Column="0" 
+                   Grid.Row="1"
+                   Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"/>
+        <TextBlock Text="Password" 
+                   FontWeight="Bold" 
+                   FontSize="16"
+                   Grid.Column="4" 
+                   Grid.Row="1"
+                   Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"/>
+        <TextBox PlaceholderText="Username"  
+                 FontSize="16"
+                 Grid.Column="0" 
+                 Grid.Row="1"
+                 Grid.ColumnSpan="3"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Width="120"/>
+        <TextBox PlaceholderText="Password"  
+                 FontSize="16"
+                 Grid.Column="4" 
+                 Grid.Row="1"
+                 Grid.ColumnSpan="3"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Width="120"/>
+
+        <!-- Login button -->
+        <Button x:Name="GotoHomePageButton" 
+                Content="Login" 
+                FontFamily="Consolas" 
+                Background="#33000000" 
+                Click="GotoHomePageButton_Click" 
+                Height="50" 
+                Width="120" 
+                FontSize="22" 
+                BorderBrush="White"
+                Grid.Column="4" 
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"/>
+    </Grid>
+</Page>

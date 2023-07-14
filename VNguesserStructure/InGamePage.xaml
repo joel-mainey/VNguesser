@@ -1,0 +1,233 @@
+﻿<Page
+    x:Class="VNguesserStructure.InGamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VNguesserStructure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Page_SizeChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Background -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Game_Background.png"
+                        Stretch="UniformToFill" 
+                        Opacity="0.7"/>
+        </Grid.Background>
+
+        <!-- Leave button -->
+        <Button x:Name="GotoHomePageButton"              
+                Grid.Column="0" 
+                Grid.Row="0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                Content="Leave" 
+                Click="GotoHomePageButton_Click"
+                Foreground="White"
+                Background="#33000000"
+                BorderBrush="White"/>
+
+        <!-- Pause button -->
+        <Button x:Name = "Pause"
+                Grid.Column="0" 
+                Grid.Row="0"
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Right" 
+                Content="P" 
+                Foreground="White"
+                Background="#33000000"
+                BorderBrush="White" 
+                Click="Pause_Click"/>
+
+        <!-- Round count -->
+        <TextBlock Text="0/20"
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold"
+                   Grid.Column="2" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="4"
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Center" 
+                   Foreground="White"
+                   Width="50"/>
+
+        <!-- VN Name -->
+        <TextBlock Name="NameBox" 
+                   Text=""
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold"
+                   Grid.Column="0" 
+                   Grid.Row="0"
+                   Grid.ColumnSpan="7"
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   Foreground="White"
+                   Width="400" 
+                   Height="24"
+                   TextAlignment="Center"/>
+
+        <!-- Screenshot holder -->
+        <Image Name="ScreenshotHolder" 
+               Height="200" 
+               Width="350"
+               Grid.Column="0" 
+               Grid.Row="1"
+               Grid.ColumnSpan="7"
+               Grid.RowSpan="3"
+               VerticalAlignment="Top" 
+               HorizontalAlignment="Center"/>
+
+        <!-- Auto suggest text input -->
+        <AutoSuggestBox Name="MyAutoSuggestBox" 
+                        Grid.Column="2" 
+                        Grid.Row="3"
+                        Grid.ColumnSpan="4"
+                        VerticalAlignment="Center"  
+                        HorizontalAlignment="Center" 
+                        QueryIcon="Find"
+                        PlaceholderText="Enter VN..." 
+                        TextChanged="MyAutoSuggestBox_TextChanged" 
+                        Width="250"
+                        Height="30"
+                        Background="#66000000"
+                        BorderBrush="#66FFFFFF"/>
+
+        <!-- Player icon -->
+        <Ellipse Name="PlayerIcon" 
+                 Height="100" 
+                 Stroke="Black" 
+                 Width="100" 
+                 Grid.Column="2" 
+                 Grid.Row="4"
+                 Grid.ColumnSpan="4"
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Center">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="Assets/playericon.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <!-- Player name & score -->
+        <TextBlock Text="Player name" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold"
+                   Grid.Column="2" 
+                   Grid.Row="5"
+                   Grid.ColumnSpan="4"
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Center"/>
+        <TextBlock Text="20" 
+                   FontFamily="Consolas"
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Grid.Column="2" 
+                   Grid.Row="4"
+                   Grid.ColumnSpan="4"
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Center"/>
+
+        <!-- Text input -->
+        <TextBox x:Name="ChatInput" 
+                 PlaceholderText="Type Here..."
+                 Grid.Column="0" 
+                 Grid.Row="6"
+                 Grid.ColumnSpan="7"
+                 VerticalAlignment="Bottom" 
+                 HorizontalAlignment="Center"
+                 PlaceholderForeground="White"
+                 Background="#66000000"
+                 BorderBrush="#66FFFFFF" 
+                 Width="400" 
+                 Height="80"/>
+        
+        <!-- Chat box -->
+        <TextBlock x:Name="ChatOutput"
+                   FontFamily="Consolas"
+                   FontSize="20"
+                   FontWeight="Bold" 
+                   Grid.Column="0" 
+                   Grid.Row="5"
+                   Grid.ColumnSpan="7"
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Center"
+                   FocusVisualPrimaryBrush="White" 
+                   FocusVisualSecondaryBrush="#99FFFFFF"
+                   Width="400" 
+                   Height="80"/>
+
+        <!-- Player level -->
+        <TextBlock Text="Level: 1" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Grid.Column="2" 
+                   Grid.ColumnSpan="2"
+                   Grid.Row="10" 
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Right"
+                   Width="90" 
+                   Height="30"/>
+
+        <!-- Friends List -->
+        <TextBlock Text="Friends" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Grid.Column="0" 
+                   Grid.Row="10" 
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Left"
+                   Width="80" 
+                   Height="30"/>
+
+        <!-- Currency -->
+        <TextBlock Text="40,000" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Grid.Column="3" 
+                   Grid.ColumnSpan="2"
+                   Grid.Row="10" 
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Right"
+                   Width="80"
+                   Height="30"/>
+
+        <!-- User Settings button -->
+        <Button x:Name="GotoUserSettingsPageButton"
+                Grid.Column="7" 
+                Grid.Row="10" 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right"
+                Width="48" 
+                Height="50">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/1200px-Cog_font_awesome.svg.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

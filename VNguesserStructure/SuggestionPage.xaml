@@ -1,0 +1,118 @@
+﻿<Page
+    x:Class="VNguesserStructure.SuggestionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VNguesserStructure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Page_SizeChanged">
+
+    <Grid Background="#252526">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Color change -->
+        <Rectangle Grid.Column="0" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="7"
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Center" 
+                   Height="60" 
+                   Fill="#3e3e42" 
+                   Width="600"/>
+
+        <!-- Suggestions -->
+        <TextBlock Text="Suggestions" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold"
+                   Grid.Column="2" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="4"
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center"
+                   Width="120" 
+                   Height="50"/>
+
+        <!-- Email, Message -->
+        <TextBlock Text="Email" 
+                   FontWeight="Bold" 
+                   Grid.Column="2" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="4"
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Center"
+                   FontSize="16"/>
+        <TextBlock Text="Message" 
+                   FontWeight="Bold" 
+                   Grid.Column="2" 
+                   Grid.Row="1" 
+                   Grid.ColumnSpan="4"
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Center"
+                   FontSize="16"/>
+        <TextBox PlaceholderText="Email here..." 
+                 Grid.Column="2" 
+                 Grid.Row="1" 
+                 Grid.ColumnSpan="4"
+                 VerticalAlignment="Top" 
+                 HorizontalAlignment="Center"
+                 FontSize="16"/>
+        <TextBox PlaceholderText="Enter you suggestions for the game here..." 
+                 Grid.Column="0" 
+                 Grid.Row="2" 
+                 Grid.ColumnSpan="7"
+                 Grid.RowSpan="2"
+                 VerticalAlignment="Top" 
+                 HorizontalAlignment="Center"
+                 FontSize="16" 
+                 Width="340" 
+                 Height="140"/>
+
+        <!-- Suggestions submit button -->
+        <Button x:Name="SuggestionsSubmitButton" 
+                Content="Submit" 
+                Background="#33000000" 
+                Grid.Column="2" 
+                Grid.Row="4" 
+                Grid.ColumnSpan="4"
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Center"
+                Width="150" 
+                Height="50" 
+                FontSize="22" 
+                BorderBrush="White"/>
+
+        <!-- Exit Suggestions button -->
+        <Button x:Name="GotoHomePageButton" 
+                Grid.Column="7" 
+                Grid.Row="0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Right" 
+                Width="48" 
+                Height="50" 
+                Click="GotoHomePageButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/cross.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

@@ -1,0 +1,180 @@
+﻿<Page
+    x:Class="VNguesserStructure.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VNguesserStructure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Page_SizeChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Background -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Game_Background.png" 
+                        Stretch="UniformToFill" 
+                        Opacity="0.7"/>
+        </Grid.Background>
+
+        <!-- Title -->
+        <TextBlock Text="VNguesser" 
+                   FontFamily="Consolas" 
+                   FontSize="48" 
+                   FontWeight="Bold" 
+                   Grid.Column="0" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="7"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="237" 
+                   Height="56"/>
+
+        <!-- Start Game button -->
+        <Button x:Name="GotoGameSettingsPageButton" 
+                Content="Singleplayer" 
+                Background="#33000000" 
+                Grid.Column="2" 
+                Grid.Row="1" 
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" 
+                Width="150" 
+                Height="50" 
+                FontSize="22" 
+                BorderBrush="White" 
+                Click="GotoGameSettingsPageButton_Click"/>
+
+        <!-- Store button -->
+        <Button x:Name="GotoStorePageButton" 
+                Content="Store" 
+                Background="#33000000" 
+                Grid.Column="2" 
+                Grid.Row="2" 
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" 
+                Width="150" 
+                Height="50" 
+                FontSize="22" 
+                BorderBrush="White" 
+                Click="GotoStorePageButton_Click"/>
+
+        <!-- Leaderboard button -->
+        <Button x:Name="GotoLeaderboardPageButton" 
+                Content="Leaderboard" 
+                Background="#33000000" 
+                Grid.Column="2" 
+                Grid.Row="3" 
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" 
+                Width="150" 
+                Height="50" 
+                FontSize="22" 
+                BorderBrush="White" 
+                Click="GotoLeaderboardPageButton_Click"/>
+
+        <!-- Patreon button -->
+        <Button x:Name="GotoPatreonPageButton" 
+                Content="Patreon" 
+                Background="#33000000" 
+                Grid.Column="2" 
+                Grid.Row="4" 
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" 
+                Width="150" 
+                Height="50" 
+                FontSize="22" 
+                Foreground="White" 
+                BorderBrush="White" 
+                Click="GotoPatreonPageButton_Click"/>
+
+        <!-- Suggestion button -->
+        <Button x:Name="GotoSuggestionPageButton" 
+                Content="Suggestions" 
+                Background="#33000000" 
+                Grid.Column="2" 
+                Grid.Row="5" 
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" 
+                Width="150" 
+                Height="50" 
+                FontSize="22" 
+                Foreground="White" 
+                BorderBrush="White" 
+                Click="GotoSuggestionPageButton_Click"/>
+
+        <!-- User Settings button -->
+        <Button x:Name="GotoUserSettingsPageButton" 
+                Grid.Column="7" 
+                Grid.Row="10" 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right"  
+                Width="48" 
+                Height="50" Click="GotoUserSettingsPageButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/1200px-Cog_font_awesome.svg.png"/>
+            </Button.Background>
+        </Button>
+
+        <!-- Player level -->
+        <TextBlock Text="Level: 1" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Grid.Column="2" 
+                   Grid.ColumnSpan="2"
+                   Grid.Row="10" 
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Right"  
+                   Width="90" 
+                   Height="30"/>
+
+        <!-- Friends List -->
+        <TextBlock Text="Friends" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Grid.Column="0" 
+                   Grid.Row="10" 
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Left"
+                   Width="80" 
+                   Height="30"/>
+
+        <!-- Currency -->
+        <TextBlock Text="40,000" 
+                   FontFamily="Consolas" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Grid.Column="3" 
+                   Grid.ColumnSpan="2"
+                   Grid.Row="10" 
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Right"
+                   Width="80"
+                   Height="30"/>
+    </Grid>
+</Page>
